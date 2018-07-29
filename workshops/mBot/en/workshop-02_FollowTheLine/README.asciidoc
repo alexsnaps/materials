@@ -1,0 +1,65 @@
+= Workshop 02 - Follow the line
+
+In this workshop we will be using the sensor below the robot: the line follower.
+
+[.text-center]
+image::../../resources/images/mBot-line-follower-sensor.jpg[mBot, 300, 300, link="../../resources/images/mBot-line-follower-sensor.jpg"]
+
+[cols="1,4"]
+|===
+|*Level:*| Beginner
+|*Objective:*| Use the line follower
+|*Age:*| 9 to 11 year old
+|*Duration:*| 1h30 to 2h
+|===
+
+== Step 1: Discover the line follower
+Let us discover what this line follower is about & we can use it.
+[.text-center]
+image::../../resources/images/mBot-line-follower-sensor.png[mBot, 300, 300, link="../../resources/images/mBot-line-follower-sensor.png"]
+
+The mBot is equiped with a line follower component. It is itself composed of two infrared sensors (sensor1 & sensor2).
+Each of which has a transmitter and receiver part.
+
+Write and execute the following program to discover how it is being used.
+
+image::../../resources/images/Workshop2_Step1_EN.png[Line Follower, link="../../resources/images/Workshop2_Step1_EN.png"] 
+Look into these situations:
+[.text-center]
+image::../../resources/images/mBot-line-follower-sensor-situations.png[mBot, -1, 100, link="../../resources/images/mBot-line-follower-sensor.png"]
+
+[cols="^s,^n,^n,^n,^n,^n,^n",options="header"]
+|===
+|         2+^| Sensor 1     2+^| Sensor 2        2+^| values 
+|Situation 1:| No signal  |0 | No signal  | 0 | 00 | 0
+|Situation 2:| No signal  |0 | Signal     | 1 | 01 | 1
+|Situation 3:| Signal     |1 | No signal  | 0 | 10 | 2
+|Situation 4:| Signal     |1 | Signal     | 1 | 11 | 3
+|===
+
+The values sent by each sensor is a binary value, either 0 or 1. The two values are then also interpreted as binary values, e.g. `10b` is equivalent to 
+`2` in base 10, the base we commonly use to count.
+
+== Step 2: Don't fall of the table
+
+This step's objective is to have the robot stop if it realizes it's about to fall off.
+ 
+For this to work, we need to have the mBot on a white, or a light colored, table. The robot is expected to stop as soon as it arrives to the edge.
+
+- Copy the following program :
+
+image::../../resources/images/Workshop2_Step2_EN.png[Siveur de ligne, link="../../resources/images/Workshop2_Step1_EN.png"] 
+
+- Connect to the robot & execute the program. 
+- Are you able to explain the different parts of this program?
+
+== Step 3: Follow the line.
+
+- Enter the following program :
+
+image::../../resources/images/Workshop2_Step3_EN.png[Siveur de ligne, link="../../resources/images/Workshop2_Step1_EN.png"] 
+
+- Test this new program out
+- You might want to make the case for situation 4 a little better...
+- Change the speed of the motors
+- What could you possibly add to make this more fun?
